@@ -49,6 +49,9 @@ public class ModifyAttributeVisitor extends NodeVisitor {
                         && Utils.isEqual(name, attributeItem.getName())) {
                     hasBeenAddedAttributeList.add(attributeItem);
                     newObj = attributeItem.getValue();
+                    if (obj !=null && newObj !=null && obj.getClass()!=newObj.getClass()){
+                        type = attributeItem.getType();
+                    }
                     break;
                 }
             }
